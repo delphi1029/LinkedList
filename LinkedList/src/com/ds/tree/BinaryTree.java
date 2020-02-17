@@ -1,5 +1,8 @@
 package com.ds.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 	
 	private TreeNode root;
@@ -60,7 +63,19 @@ public class BinaryTree {
 	}
 	
 	public void levelOrderTraversal(TreeNode node) {
+		Queue<TreeNode> q = new LinkedList<>();
+		q.add(node);
 		
+		while(!q.isEmpty()) {
+			TreeNode temp = q.peek();
+			if(temp.left != null)
+				q.add(temp.left);
+			if(temp.right != null)
+				q.add(temp.right);
+			
+			TreeNode t = q.poll();
+			System.out.print(t.data+" ");	
+		}
 	}
 	
 	

@@ -18,6 +18,10 @@ public class BinaryTreeMain {
 		
 		t.postOrderTraversal(root);
 		
+		System.out.println();
+		
+		t.levelOrderTraversal(root);
+		
 	}
 
 }
